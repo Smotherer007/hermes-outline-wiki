@@ -6,14 +6,14 @@
 # To ship a new version, move the pin with a new PR - never a branch or tag.
 name: outline-wiki
 repo: https://github.com/Smotherer007/hermes-outline-wiki
-sha: 1c6086f941da177192915bc0b0dc0604f798a36a
+sha: 6baeb83eba5d798aac9e16097e8a5dfe222c6971
 description: Search, read, write, organise and comment on Outline wiki documents. Works with
   Outline cloud and self-hosted instances, and with several workspaces at once. Standard library
   only, and it acts as whoever owns the Outline API key.
 maintainer: Patrick Weppelmann
 tier: community
 category: tools
-version: "1.0.0"
+version: "1.0.1"
 docs_url: https://github.com/Smotherer007/hermes-outline-wiki#readme
 platforms: []
 capabilities:
