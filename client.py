@@ -41,7 +41,7 @@ from .models import (
 )
 
 DEFAULT_TIMEOUT_S = 30.0
-PLUGIN_VERSION = "1.0.0"
+PLUGIN_VERSION = "1.0.1"
 
 _insecure_context: Optional[ssl.SSLContext] = None
 

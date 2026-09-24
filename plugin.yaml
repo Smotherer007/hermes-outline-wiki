@@ -1,9 +1,19 @@
 name: outline-wiki
-version: 1.0.0
+version: 1.0.1
 description: "Outline wiki for Hermes: search, read, write, organise and comment on Outline documents, across several workspaces."
 author: Patrick Weppelmann
 kind: standalone
-manifest_version: 2
+# Declared 1 on purpose. Every field below is additive and understood by v1
+# readers, while Hermes releases up to 2026.9.14 ship an installer that rejects
+# any declaration above 1 outright (_SUPPORTED_MANIFEST_VERSION in
+# hermes_cli/plugins_cmd.py) even though their own manifest parser accepts 2.
+# Declaring 2 therefore only ever surfaces as
+#   Error: Plugin 'outline-wiki' requires manifest_version 2, but this installer
+#   only supports up to 1
+# and buys nothing: nothing in this plugin needs a v2-only capability.
+# Fixed upstream in 2026.9.21; bump this back once the oldest Hermes you support
+# understands a v2 declaration.
+manifest_version: 1
 api_version: 1
 license: MIT
 homepage: https://github.com/Smotherer007/hermes-outline-wiki

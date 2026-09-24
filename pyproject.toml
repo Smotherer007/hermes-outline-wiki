@@ -1,6 +1,6 @@
 [project]
 name = "hermes-outline-wiki"
-version = "1.0.0"
+version = "1.0.1"
 description = "Outline wiki plugin for Hermes Agent: search, read, write, organise and comment on Outline documents."
 readme = "README.md"
 license = { text = "MIT" }

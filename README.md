@@ -22,6 +22,10 @@ hermes plugins install file://$PWD/hermes-outline-wiki --enable
 
 The plugin uses only the Python standard library. It adds no packages to Hermes' virtualenv.
 
+### Hermes version
+
+The manifest declares `manifest_version: 1` on purpose. Hermes releases up to `2026.9.14` (v0.21.3) fetch a manifest parser that accepts v2, but an installer that rejects any declaration above 1 — so `manifest_version: 2` only ever comes back as `Error: Plugin 'outline-wiki' requires manifest_version 2, but this installer only supports up to 1`. Every field this plugin uses is additive and understood by v1 readers, so declaring 1 costs nothing. The inconsistency was fixed upstream in `2026.9.21`; raise the declaration again once the oldest Hermes you support is that new.
+
 ## Quick start
 
 1. In Outline, go to **Settings -> API & Apps** and create an API key. It starts with `ol_api_`.
