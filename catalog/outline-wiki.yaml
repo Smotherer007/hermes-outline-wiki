@@ -1,0 +1,40 @@
+# Candidate entry for the Hermes plugin catalog.
+# Target: NousResearch/hermes-agent -> plugin-catalog/outline-wiki.yaml
+#
+# The `sha` is an exact 40-character commit pin, as the catalog requires.
+# It points at the commit that froze the plugin code (the initial release).
+# To ship a new version, move the pin with a new PR - never a branch or tag.
+name: outline-wiki
+repo: https://github.com/Smotherer007/hermes-outline-wiki
+sha: 1c6086f941da177192915bc0b0dc0604f798a36a
+description: Search, read, write, organise and comment on Outline wiki documents. Works with
+  Outline cloud and self-hosted instances, and with several workspaces at once. Standard library
+  only, and it acts as whoever owns the Outline API key.
+maintainer: Patrick Weppelmann
+tier: community
+category: tools
+version: "1.0.0"
+docs_url: https://github.com/Smotherer007/hermes-outline-wiki#readme
+platforms: []
+capabilities:
+  provides_tools:
+  - outline_setup
+  - outline_status
+  - outline_profile
+  - outline_collections
+  - outline_structure
+  - outline_search
+  - outline_list
+  - outline_read
+  - outline_create
+  - outline_update
+  - outline_move
+  - outline_archive
+  - outline_delete
+  - outline_comments
+  - outline_comment
+  - outline_export
+  provides_hooks:
+  - pre_tool_call
+  provides_middleware: []
+  requires_env: []
