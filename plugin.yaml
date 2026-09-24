@@ -1,0 +1,48 @@
+name: outline-wiki
+version: 1.0.0
+description: "Outline wiki for Hermes: search, read, write, organise and comment on Outline documents, across several workspaces."
+author: Patrick Weppelmann
+kind: standalone
+manifest_version: 2
+api_version: 1
+license: MIT
+homepage: https://github.com/Smotherer007/hermes-outline-wiki
+tags: [outline, wiki, knowledge-base, documentation]
+provides_tools:
+  - outline_setup
+  - outline_status
+  - outline_profile
+  - outline_collections
+  - outline_structure
+  - outline_search
+  - outline_list
+  - outline_read
+  - outline_create
+  - outline_update
+  - outline_move
+  - outline_archive
+  - outline_delete
+  - outline_comments
+  - outline_comment
+  - outline_export
+provides_hooks:
+  - pre_tool_call
+# No requires_env on purpose: workspaces can be configured at runtime with
+# outline_setup, from a config file, or from these optional variables.
+optional_env:
+  - name: OUTLINE_URL
+    description: "Workspace URL, e.g. https://acme.getoutline.com (optional; alternative to outline_setup)"
+  - name: OUTLINE_API_KEY
+    description: "Outline API key from Settings -> API & Apps, starts with ol_api_"
+    secret: true
+  - name: OUTLINE_DESCRIPTION
+    description: "One line on what this wiki holds"
+  - name: OUTLINE_CONFIG
+    description: "Path to the profile file (default: $HERMES_HOME/outline-config.json)"
+config_schema:
+  safety_level:
+    type: str
+    choices: [open, confirm, readonly]
+    default: open
+    label: "Safety level"
+    description: "open: write tools run directly. confirm: every write goes through the Hermes approval gate. readonly: write tools are blocked."
